@@ -1,4 +1,3 @@
-%pylab inline
 import numpy as np
 import netCDF4 as netCDF  # file format
 import tracpy
