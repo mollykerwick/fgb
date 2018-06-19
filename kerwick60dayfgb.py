@@ -8,6 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import os
+import matplotlib
 matplotlib.rcParams.update({'font.size': 20})
 
 
