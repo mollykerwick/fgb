@@ -1,5 +1,3 @@
-#!/Users/mollykerwick/miniconda3/bin/python3
-
 import numpy as np
 import netCDF4 as netCDF  # file format
 import tracpy
