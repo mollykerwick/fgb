@@ -66,22 +66,22 @@ for year in years:
         name = '%dJuly%d' %(day,year)   # 27July2005
         if not os.path.exists('tracks/' + name + '.nc') and \
                     not os.path.exists('tracks/' + name + 'gc.nc'):
-            print(day)
-	    grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
-            tp = Tracpy(loc, grid, name=name, tseas=tseas, ndays=ndays, nsteps=nsteps,
-                        N=N, ff=ff, ah=ah, av=av, doturb=doturb, do3d=do3d, z0=z0, zpar=zpar, time_units=time_units)
-            # evenly spaced surface drifters
-            dx = 1000  # in meters
-            lonsink, latsink = -93.72595, 27.902   # exactly in between outer boundaries of banks from fgb website
-            llcrnrlon = lonsink - 0.2
-            urcrnrlon = lonsink + 0.2
-            llcrnrlat = latsink - 0.12
-            urcrnrlat = latsink + 0.12
-            xcrnrs, ycrnrs = tp.grid.proj([llcrnrlon, urcrnrlon], [llcrnrlat, urcrnrlat]) 
-            X, Y = np.meshgrid(np.arange(xcrnrs[0], xcrnrs[1], dx), np.arange(ycrnrs[0], ycrnrs[1], dx)) 
-            lon0, lat0 = tp.grid.proj(X, Y, inverse=True)
-            lon0, lat0 = tracpy.tools.check_points(lon0, lat0, tp.grid)
-            lonp, latp, zp, t, T0, U, V = tracpy.run.run(tp, date, lon0, lat0) 
+		print(day)
+		grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
+		tp = Tracpy(loc, grid, name=name, tseas=tseas, ndays=ndays, nsteps=nsteps,
+			N=N, ff=ff, ah=ah, av=av, doturb=doturb, do3d=do3d, z0=z0, zpar=zpar, time_units=time_units)
+		# evenly spaced surface drifters
+		dx = 1000  # in meters
+		lonsink, latsink = -93.72595, 27.902   # exactly in between outer boundaries of banks from fgb website
+		llcrnrlon = lonsink - 0.2
+		urcrnrlon = lonsink + 0.2
+		llcrnrlat = latsink - 0.12
+		urcrnrlat = latsink + 0.12
+		xcrnrs, ycrnrs = tp.grid.proj([llcrnrlon, urcrnrlon], [llcrnrlat, urcrnrlat]) 
+		X, Y = np.meshgrid(np.arange(xcrnrs[0], xcrnrs[1], dx), np.arange(ycrnrs[0], ycrnrs[1], dx)) 
+		lon0, lat0 = tp.grid.proj(X, Y, inverse=True)
+		lon0, lat0 = tracpy.tools.check_points(lon0, lat0, tp.grid)
+		lonp, latp, zp, t, T0, U, V = tracpy.run.run(tp, date, lon0, lat0) 
 
 
 
