@@ -45,7 +45,6 @@ zpar = num_layers-1
 
 # SETUP FOR SIMULATION
 
-grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
 # 50 SURFACE DRIFTERS
 # lon0, lat0 = np.meshgrid(np.linspace(-94,-93.7,10), \
 #                             np.linspace(27.8,28,10)) # whole domain, 20 km
@@ -67,10 +66,11 @@ for year in years:
         name = '%dJuly%d' %(day,year)   # 27July2005
         if not os.path.exists('tracks/' + name + '.nc') and \
                     not os.path.exists('tracks/' + name + 'gc.nc'):
+            grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
             tp = Tracpy(loc, grid, name=name, tseas=tseas, ndays=ndays, nsteps=nsteps,
                         N=N, ff=ff, ah=ah, av=av, doturb=doturb, do3d=do3d, z0=z0, zpar=zpar, time_units=time_units)
             # evenly spaced surface drifters
-            dx = 800  # in meters
+            dx = 1000  # in meters
             lonsink, latsink = -93.72595, 27.902   # exactly in between outer boundaries of banks from fgb website
             llcrnrlon = lonsink - 0.2
             urcrnrlon = lonsink + 0.2
