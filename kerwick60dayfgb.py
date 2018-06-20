@@ -60,10 +60,10 @@ years = np.arange(1994,2017)
 
 for year in years:
 	month = 7     # July
-    days = np.arange(1,32)#   for all 31 days in July
+    days = np.arange(1,32)
     for day in days:
-		date = datetime.datetime(year, month, day, 0)
-		name = '%dJuly%d' %(day,year)   # 27July2005
+    	date = datetime.datetime(year, month, day, 0)
+   		name = '%dJuly%d' %(day,year)   # 27July2005
 	    if not os.path.exists('tracks/' + name + '.nc') and not os.path.exists('tracks/' + name + 'gc.nc'):
 		    print(day)
 		    grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
