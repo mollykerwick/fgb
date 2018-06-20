@@ -17,7 +17,8 @@ matplotlib.rcParams.update({'font.size': 20})
 
 # Location of TXLA model output file and grid, on a thredds server
 # ROMS model output 1/1/1994-1/1/2017
-loc = 'http://barataria.tamu.edu:8080/thredds/dodsC/NcML/txla_hindcast_agg'
+#loc = 'http://barataria.tamu.edu:8080/thredds/dodsC/NcML/txla_hindcast_agg'
+loc = "http://copano.tamu.edu:8080/thredds/dodsC/NcML/txla_hindcast_agg"
 
 # Time units
 time_units = 'seconds since 1970-01-01'
