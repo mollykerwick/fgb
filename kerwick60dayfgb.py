@@ -59,12 +59,12 @@ zpar = num_layers-1
 years = np.arange(1994,2017)
 
 for year in years:
-    month = 7     # July
+	month = 7     # July
     days = np.arange(1,32)#   for all 31 days in July
     for day in days:
 	date = datetime.datetime(year, month, day, 0)
-        name = '%dJuly%d' %(day,year)   # 27July2005
-        if not os.path.exists('tracks/' + name + '.nc') and not os.path.exists('tracks/' + name + 'gc.nc'):
+	name = '%dJuly%d' %(day,year)   # 27July2005
+    if not os.path.exists('tracks/' + name + '.nc') and not os.path.exists('tracks/' + name + 'gc.nc'):
 	    print(day)
 	    grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
 	    tp = Tracpy(loc, grid, name=name, tseas=tseas, ndays=ndays, nsteps=nsteps,N=N, ff=ff, ah=ah, av=av, doturb=doturb, do3d=do3d, z0=z0, zpar=zpar, time_units=time_units)
