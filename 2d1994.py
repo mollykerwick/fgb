@@ -12,6 +12,7 @@ import cartopy.crs as ccrs
 import os
 import matplotlib
 import datetime
+import sys
 matplotlib.rcParams.update({'font.size': 20})
 
 
@@ -57,7 +58,8 @@ zpar = num_layers-1
 
 grid = tracpy.inout.readgrid(loc, proj, usespherical=True)
 
-year = 1994
+year = int(sys.argv[1:][0])
+#year = 1994
 
 month = 7	 # July
 days = np.arange(1,32)
