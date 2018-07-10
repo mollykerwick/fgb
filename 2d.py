@@ -91,7 +91,7 @@ month = 7	 # July
 days = np.arange(1,32)
 for day in days:
     date = datetime.datetime(year, month, day, 0)
-    name = "2d_July%d" %(year,day) # 2d_July5
+    name = "2d_July%d" %(day) # 2d_July5
     if not os.path.exists("tracks/" + name + '.nc') and not os.path.exists("tracks/" + name + 'gc.nc'):
         if not os.path.exists("tracks/" + str(year) + "/" + name + '.nc') and not os.path.exists("tracks/" + str(year) + "/" + name + 'gc.nc'):
             os.makedirs("tracks/" + str(year) ,exist_ok=True)
