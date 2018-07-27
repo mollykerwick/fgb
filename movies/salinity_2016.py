@@ -69,7 +69,7 @@ for day in days:
         ax.add_feature(cfeature.NaturalEarthFeature(category = 'physical', 
             name='rivers_lake_centerlines',scale='10m', edgecolor='navy', facecolor='none', linewidths=0.3))
         ax.add_feature(cfeature.NaturalEarthFeature(category = 'physical', 
-            'rivers_north_america', '10m', edgecolor='navy', facecolor='none', linewidths=0.3))
+            name='rivers_north_america', scale='10m', edgecolor='navy', facecolor='none', linewidths=0.3))
 
     ### plot salinity
         mp = ax.pcolormesh(ds["lon_rho"][:, :], ds["lat_rho"][:, :], ds["salt"][ind, 29, :, :], transform=ccrs.PlateCarree(),
