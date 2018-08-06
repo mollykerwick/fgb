@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "salinity_2016.py", line 1
+    %pylab inline
+    ^
+SyntaxError: invalid syntax
