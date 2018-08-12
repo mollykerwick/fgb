@@ -101,7 +101,9 @@ def movie( start_date=1, loc=None, grid=None, salinity=False, depth=False, res="
 	            	cax = fig.add_axes([0.38, 0.25, 0.415, 0.025])
 
 	            	cb = fig.colorbar(drif, cax=cax, orientation='horizontal')
+	            	
 					cb.set_label("Depth")
+
 		    	else:
 					ax.scatter( dd["lonp"][:,-idrift], dd["latp"][:,-idrift], marker="o", edgecolors="black", facecolors="white", s=12, linewidths=0.5, transform=ccrs.PlateCarree() )
 	            
