@@ -98,7 +98,7 @@ def movie( start_date=1, loc=None, grid=None, salinity=False, depth=False, res="
 	            idrift = ((day-drifter) * 24 +1 ) + (hour)   # gets drifter's position at certain hour on certain day
 	            if depth:
 	            	drif = ax.scatter( dd["lonp"][412:,-idrift], dd["latp"][412:,-idrift], c=abs(dd["zp"][412:,-idrift]),
-	            					cmap=cmo.cm.deep, vmin=0, vmax=500, marker="o", edgecolors="black", s=12, linewidths=0.5, transform=ccrs.PlateCarree() )
+	            		cmap=cmo.cm.deep, vmin=0, vmax=500, marker="o", edgecolors="black", s=12, linewidths=0.5, transform=ccrs.PlateCarree() )
 	            	cax = fig.add_axes([0.38, 0.25, 0.415, 0.025])
 					cb = fig.colorbar(drif, cax=cax, orientation='horizontal')
 					cb.set_label("Depth")
